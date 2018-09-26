@@ -110,7 +110,7 @@ Dim objNode As MSXML2.IXMLDOMElement
             sNameShark = sNameShark & """photoData"":""data:image/jpeg;base64," & sEnc & """}"
                       
             ' write the NameShark-string to the NameShark-file, append it to any existing file contents
-            Call NS_WriteStringToFile(sNameShark, ROOTFOLDER & "NameSharkGroup-" & sGroup & ".json", "{""name"":""" & sGroup & """,""contacts"":[", True)
+            Call NS_WriteStringToFile(sNameShark, ROOTFOLDER & "NameSharkGroup-" & sGroup & ".json", "{""name"":""" & NS_Safestring(sGroup) & """,""contacts"":[", True)
             
             ' Update the counter and show the progress
             iChanged = iChanged + 1
